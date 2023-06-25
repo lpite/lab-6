@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <button class="navigation_button">task 1</button>
+      <button class="navigation_button">task 2</button>
+      <button class="navigation_button">task 3</button>
+      <button class="navigation_button">task 4</button>
+      <button class="navigation_button">task 5</button>
+      <button class="navigation_button">task 6</button>
+    </header>
+    <div class="task">
+      <h2>Завдання 1</h2>
+      <select id="task1_select">
+        <option value="blue">Блакитний</option>
+        <option value="green">Зелений</option>
+        <option value="yellow">Жовтий</option>
+      </select>
+      <script>
+        const select = document.getElementById("task1_select");
+        select.addEventListener("change", (e) => {
+          switch (e.target.value) {
+            case "blue":
+              document.body.style.backgroundColor = "lightblue";
+              break;
+
+            case "green":
+              document.body.style.backgroundColor = "green";
+              break;
+
+            case "yellow":
+              document.body.style.backgroundColor = "yellow";
+              break;
+
+            default:
+              break;
+          }
+        });
+      </script>
+    </div>
+    <div class="task task--hidden">
+      <h2>Завдання 2</h2>
+
+      <h2>Виключаюче або</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>Вирази</td>
+            <td>Відповідь</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0 V 0</td>
+            <td>
+              <label>
+                1 <input type="radio" name="1" value="w" class="task2_radio" />
+              </label>
+              <label>
+                0 <input type="radio" name="1" value="r" class="task2_radio" />
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>0 V 1</td>
+            <td>
+              <label>
+                1 <input type="radio" name="2" value="r" class="task2_radio" />
+              </label>
+              <label>
+                0 <input type="radio" name="2" value="w" class="task2_radio" />
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>1 V 0</td>
+            <td>
+              <label>
+                1 <input type="radio" name="3" value="r" class="task2_radio" />
+              </label>
+              <label>
+                0 <input type="radio" name="3" value="w" class="task2_radio" />
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>1 V 1</td>
+            <td>
+              <label>
+                1 <input type="radio" name="4" value="w" class="task2_radio" />
+              </label>
+              <label>
+                0 <input type="radio" name="5" value="r" class="task2_radio" />
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <script>
+        const radios = document.querySelectorAll(".task2_radio");
+        radios.forEach((radio) => {
+          radio.addEventListener("change", (e) => {
+            if (e.target.value === "r") {
+              alert("Правильно");
+            } else {
+              alert("Неправильно");
+            }
+          });
+        });
+      </script>
+    </div>
+    <div class="task task--hidden">
+      <h2>Завдання 3</h2>
+      <span> Якого кольору сонце???? </span>
+      <br />
+      <label>
+        Жовте
+        <input type="radio" name="task3" value="r" class="task3_radio" />
+      </label>
+      <br />
+      <label>
+        Ніяке
+        <input type="radio" name="task3" value="" class="task3_radio" />
+      </label>
+      <br />
+      <label>
+        Зелене
+        <input type="radio" name="task3" value="" class="task3_radio" />
+      </label>
+      <script>
+        const radios3 = document.querySelectorAll(".task3_radio");
+        radios3.forEach((radio) => {
+          radio.addEventListener("change", (e) => {
+            if (e.target.value === "r") {
+              alert("Правильно");
+            } else {
+              alert("Неправильно");
+            }
+          });
+        });
+      </script>
+    </div>
+    <div class="task task--hidden">
+      <h2>Завдання 4</h2>
+
+      <h2>Реєстрація</h2>
+      <form class="task4_form">
+        <label>
+          Ім'я
+          <br />
+          <input type="text" name="name" id="" />
+        </label>
+        <br />
+        <label>
+          Номер телефону
+          <br />
+          <input type="tel" name="phone" id="" />
+        </label>
+        <br />
+        <label>
+          Email
+          <br />
+          <input type="email" name="email" id="" />
+        </label>
+        <br />
+        <label>
+          Пароль
+          <br />
+          <input type="password" name="new-password" id="" />
+        </label>
+        <br />
+        <input
+          type="reset"
+          value="Зареєструватися"
+          onclick="alert('Успішно')"
+        />
+      </form>
+    </div>
+    <div class="task task--hidden">
+      <h2>Завдання 5</h2>
+      <input type="number" class="task5_input" />
+      +
+      <input type="number" class="task5_input" />
+      =
+      <input type="number" class="task5_result" disabled />
+      <script>
+        const inputs = document.querySelectorAll(".task5_input");
+        inputs.forEach((input) => {
+          input.addEventListener("input", (e) => {
+            document.querySelector(".task5_result").value =
+              parseInt(inputs[0].value) + parseInt(inputs[1].value);
+          });
+        });
+      </script>
+    </div>
+    <div class="task task--hidden">
+      <h2>Завдання 6</h2>
+      <form action="mailto:me@email.com">
+        <label>
+          Тема листа
+          <br />
+          <input name="subject" type="text" />
+        </label>
+        <br />
+        <label>
+          Текст листа
+          <br />
+          <textarea name="body"></textarea>
+        </label>
+        <br />
+        <button>Відправити</button>
+      </form>
+    </div>
+    <script>
+      const navButtons = document.querySelectorAll(".navigation_button");
+      const tasks = document.querySelectorAll(".task");
+      let activeTask = 0;
+      navButtons.forEach((button, buttonIndex) => {
+        button.addEventListener("click", () => {
+          if (buttonIndex !== activeTask) {
+            tasks[buttonIndex].classList.remove("task--hidden");
+            tasks[activeTask].classList.add("task--leave");
+            tasks[buttonIndex].classList.add("task--enter");
+            setTimeout(() => {
+              tasks[activeTask].classList.remove("task--leave");
+              tasks[activeTask].classList.add("task--hidden");
+              tasks[buttonIndex].classList.remove("task--enter");
+              activeTask = buttonIndex;
+            }, 600);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
